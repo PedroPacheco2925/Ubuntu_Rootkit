@@ -22,7 +22,7 @@ def services():
         adduser_or_install = int(input("O que pretende fazer\n[1] - Instalar o serviço\n[2] - Adicionar utilizadores\n[3] - Ver utilizadores\nopção:"))
         if adduser_or_install == 1:
             os.system("apt install vsftpd") ## O && serve para so executar o proximo comando se o primeiro for concluido
-            os.system("rm -r /etc/vsftpd.conf && cp /etc/Ubuntu_rootkit/src/services/sftp/vsftod.conf  /etc/vsftpd.conf") ## rm -r para apgar o ficheiro criado na instalação ## cp para copiar o nosso ficheiro configurado para o serviço
+            os.system("rm -r /etc/vsftpd.conf && cp /etc/Ubuntu_rootkit/src/services/sftp/vsftpd.conf  /etc/vsftpd.conf") ## rm -r para apgar o ficheiro criado na instalação ## cp para copiar o nosso ficheiro configurado para o serviço
             utilizador_1 = input("Insira o utilizador que prentede adicionar: ") # 
             os.system(f"echo {utilizador_1} >>/etc/vsftpd.chroot_list")
         elif adduser_or_install == 2:
@@ -94,7 +94,7 @@ def login():
             star_menu()
         else:
             print("Serviço ainda não instalado")
-            os.system("cd .. && mv Ubuntu_rootkit/ /etc/Ubuntu_rootkit && cd /etc/Ubuntu_rootkit && chmod +x main.py && ./main.py") # Se não tiver irá criar a mesma :) o simbolo && serve para 
+            os.system("cd .. && mv ogrupo1/ /etc/Ubuntu_rootkit && cd /etc/Ubuntu_rootkit && chmod +x main.py && ./main.py") # Se não tiver irá criar a mesma :) o simbolo && serve para 
                                                                                                                                     #so executar o proximo comando se o primeiro for concluido com sucesso
             os.system("cp src/default/rootkit.service /usr/lib/systemd/system") # Esta linha serve copiar a configuração default para que consigamos utilizar o nosso script como um serviço
             os.system("echo 'alias rootkit=\"cd /etc/Ubuntu_rootkit && ./main.py\"' >> /etc/bash.bashrc")  # A ' \ ' barra invertida serve para que possamos usar caracteres especiais como por exemplo o &&
