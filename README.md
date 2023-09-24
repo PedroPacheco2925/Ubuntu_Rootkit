@@ -1,8 +1,5 @@
 # Ubuntu_Rootkit
 
-
-Instalar em Ubuntu
-
 No termina
 git clone https://github.com/PedroPacheco2925/ogrupo1.git
 
